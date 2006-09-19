@@ -123,7 +123,6 @@ void save_into_file(char *sfile)
 	}
 	md_ignore_signals();
 	write_failed = 0;
-	(void) xxx(1);
 	r_write(fp, (char *) &detect_monster, sizeof(detect_monster));
 	r_write(fp, (char *) &cur_level, sizeof(cur_level));
 	r_write(fp, (char *) &max_level, sizeof(max_level));
@@ -190,7 +189,6 @@ void restore(char *fname)
 	{
 		clean_up("file has link");
 	}
-	(void) xxx(1);
 	r_read(fp, (char *) &detect_monster, sizeof(detect_monster));
 	r_read(fp, (char *) &cur_level, sizeof(cur_level));
 	r_read(fp, (char *) &max_level, sizeof(max_level));
@@ -390,7 +388,6 @@ void write_string(char *s, FILE *fp)
 	short n;
 
 	n = strlen(s) + 1;
-	xxxx(s, n);
 	r_write(fp, (char *) &n, sizeof(short));
 	r_write(fp, s, n);
 }
@@ -401,7 +398,6 @@ void read_string(char *s, FILE *fp)
 
 	r_read(fp, (char *) &n, sizeof(short));
 	r_read(fp, s, n);
-	xxxx(s, n);
 }
 
 void rw_rooms(FILE *fp, boolean rw)
