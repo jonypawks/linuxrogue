@@ -236,9 +236,9 @@ void wizardize(void)
 	}
 	else
 	{
-		if (get_input_line("Wizard's password: ", buf, "", "", 0, 0))
+		if (get_input_line("Your score will not be saved! Become Wizard anyway (y/N)?", buf, "", "", 0, 1))
 		{
-			if (!strncmp(buf, "password", 8))
+			if (!strncmp(buf, "Y", 1) || !strncmp(buf, "y", 1))
 			{
 				wizard = 1;
 				score_only = 1;
@@ -246,7 +246,7 @@ void wizardize(void)
 			}
 			else
 			{
-				message("Sorry", 0);
+				message("Returning to game...", 0);
 			}
 		}
 	}

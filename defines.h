@@ -1,7 +1,7 @@
 /* define.h - defines for Rogue
   The new features I've added have increased the complexity of the game
   such that I think this would be a useful way to turn on or off the
-  modifications.  It's also a nice central location for score and instruction
+  modifications.  It's also a nice central location for score
   file locations since those can vary widely.
 
   Hopefully the comments will be explanation enough.
@@ -9,11 +9,11 @@
   Version 0.3.7 - Greg Kennedy (kennedy.greg@gmail.com) - removed ROGUE_INSTRPATH
 	and COMPAT_SCORES.
   Version 0.3.5 - Greg Kennedy (kennedy.greg@gmail.com) - initial version.
-
 */
 
 /* Path to the score file.  The default is in the local directory.  Alain
-  Williams suggests using "/var/games/RogueScores".
+  Williams suggests using "/var/games/RogueScores" or some other central
+  location to enable multiple players on one machine.
   You must also give a ROGUE_SAVEPATH if you intend to enable
   ONE_SAVE_PER_PLAYER below.
   As of version 0.3.7 rogue.instr is compiled into the game. */
