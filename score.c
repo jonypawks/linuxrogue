@@ -574,37 +574,6 @@ int name_cmp(char *s1, char *s2)
 	return(r);
 }
 
-void xxxx(char *buf, int n)
-{
-	int i;
-	unsigned char c;
-
-	for (i = 0; i < n; i++)
-	{
-		/* It does not matter if accuracy is lost during this assignment */
-		c = (unsigned char) xxx(0);
-
-		buf[i] ^= c;
-	}
-}
-
-long xxx(boolean st)
-{
-	static long f, s;
-	long r;
-
-	if (st)
-	{
-		f = 37;
-		s = 7;
-		return(0L);
-	}
-	r = ((f * s) + 9337) % 8887;
-	f = s;
-	s = r;
-	return(r);
-}
-
 void nickize(char *buf, char *score, char *n_name)
 {
 	int i = 15;

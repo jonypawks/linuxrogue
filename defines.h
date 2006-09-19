@@ -7,6 +7,7 @@
   Hopefully the comments will be explanation enough.
 
   Version 0.3.7 - Greg Kennedy (kennedy.greg@gmail.com) - removed ROGUE_INSTRPATH
+	and COMPAT_SCORES.
   Version 0.3.5 - Greg Kennedy (kennedy.greg@gmail.com) - initial version.
 
 */
@@ -32,27 +33,15 @@
 #define NUMPAD
 
 /* These options change how the high score table is written:
-  MAX_SCORES sets the maximum size of the table.  It can go up to 99 and
-   not break compatability.
+  MAX_SCORES sets the maximum size of the table.
   REPEAT_NAMES allows users to be on the table multiple times (default
    behavior is only to save the top score for each userid)
-  COMPAT_SCORES is an important option.  Linuxrogue 0.3.6 introduced a rewrite
-   of score.c which uses a new layout and writes the scores file without any
-   encryption.  The original linuxrogue writes the high score table with a
-   fixed-width format and uses encryption to prevent editing.
-   The new format is advantageous because it allows more than 99 players on
-   the table, simplifies parsing for scripts, and writes more information than
-   was originally available (including dungeon level, strength, max HP, etc.)
-   However, if you have scores from a previous version of Linuxrogue, you MUST
-   turn on the COMPAT_SCORES option.  This will write scores using the old
-   method and allow you to keep your high score table intact.
-  Note that changing these options BREAKS COMPATABILITY BETWEEN SCORE FILES.
+  Note that changing these options may BREAK COMPATABILITY BETWEEN SCORE FILES.
   If you have an existing high score table, the only safe changes you can make
   here are to increase MAX_SCORES or enable REPEAT_NAMES. */
 
 #define MAX_SCORES 10
 #define REPEAT_NAMES
-#define COMPAT_SCORES
 
 /* Personally I think the game should ONLY be played where your saves are
   deleted when they're loaded. </soapbox> 

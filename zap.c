@@ -238,8 +238,6 @@ void wizardize(void)
 	{
 		if (get_input_line("Wizard's password: ", buf, "", "", 0, 0))
 		{
-			/*(void) xxx(1);
-			xxxx(buf, strlen(buf));*/
 			if (!strncmp(buf, "password", 8))
 			{
 				wizard = 1;

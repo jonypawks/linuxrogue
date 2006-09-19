@@ -17,8 +17,4 @@ void put_scores(object *monster, int other);
 
 int is_vowel(char ch);
 
-void xxxx(char *buf, int n);
-
-long xxx(boolean st);
-
 #endif	/* _SCORE_H_ */
