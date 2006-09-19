@@ -21,7 +21,16 @@ rogue: $(OBJECTS)
 	$(CC) $(CFLAGS) -c $<
 
 clean:
-	rm -f $(OBJECTS) $(DFILES) rogue
+	rm -f $(OBJECTS) $(DFILES) rogue *.tar.gz
 
 release: clean
-	tar -cvzf linuxrogue-$(VERSION).tar.gz *
+	mkdir linuxrogue-$(VERSION)
+	cp *.c linuxrogue-$(VERSION)
+	cp *.h linuxrogue-$(VERSION)
+	cp Makefile linuxrogue-$(VERSION)
+	cp AUTHORS linuxrogue-$(VERSION)
+	cp CHANGES linuxrogue-$(VERSION)
+	cp README linuxrogue-$(VERSION)
+	cp rogue-guide.txt linuxrogue-$(VERSION)
+	tar -cvzf linuxrogue-$(VERSION).tar.gz linuxrogue-$(VERSION)
+	rm -rf linuxrogue-$(VERSION)
