@@ -122,6 +122,7 @@ short get_input_line(char *prompt, char *buf, char *insert, char *if_cancelled,
 				}
 			}
 		}
+		//TODO:  Backspace key is not \b, need to determine correct value.
 		if ((ch == '\b') && (i > 0))
 		{
 			if (do_echo)
