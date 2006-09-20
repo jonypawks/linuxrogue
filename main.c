@@ -27,10 +27,10 @@ extern short party_room;
 extern object level_objects;
 extern object level_monsters;
 
-int saved_uid;
-int true_uid;
+/*int saved_uid;
+int true_uid;*/
 
-void turn_into_games(void)
+/*void turn_into_games(void)
 {
 	if(setuid(saved_uid) == -1)
 	{
@@ -46,13 +46,13 @@ void turn_into_user(void)
 		perror("setuid(restore)");
 		clean_up("");
 	}
-}
+}*/
 
 int main(int argc, char *argv[])
 {
 	/* Save the setuid we have got, then turn back into the player */
-	saved_uid = geteuid();
-	setuid(true_uid = getuid());
+//	saved_uid = geteuid();
+//	setuid(true_uid = getuid());
 
 	if (init(argc, argv))	/* restored game */
 	{

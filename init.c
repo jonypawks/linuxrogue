@@ -196,6 +196,8 @@ void clean_up(char *estr)
 void start_window(void)
 {
 	cbreak();
+//	raw();
+	keypad(stdscr, TRUE);
 	noecho();
 	nonl();
 	md_control_keyboard(0);

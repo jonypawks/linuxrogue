@@ -223,7 +223,7 @@ void put_scores(object *monster, int other)
 	boolean failed = 0;
 	char *mode = "r+w";
 
-	turn_into_games();
+	//turn_into_games();
 	while ((fp = fopen(score_file, mode)) == NULL)
 	{
 		if (!failed)
@@ -237,7 +237,7 @@ void put_scores(object *monster, int other)
 		}
 		failed = 1;
 	}
-	turn_into_user();
+	//turn_into_user();
 
 	for (i = 0; i < MAX_SCORES; i++)
 	{
