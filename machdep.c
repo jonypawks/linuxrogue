@@ -246,9 +246,6 @@ void md_gfmt(char *fname, struct rogue_time *rt_buf)
 
 	now=localtime(&(attrib.st_mtime));
 
-//	time(&rawtime);
-//	now=localtime(&rawtime);
-
 	rt_buf->year = now->tm_year;
 	rt_buf->month = now->tm_mon+1;
 	rt_buf->day = now->tm_mday;

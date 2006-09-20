@@ -4,6 +4,8 @@ CHANGES log
 Version: 0.3.7
 2006-09-20
 Greg Kennedy <kennedy.greg@gmail.com>
+* Fixed bugs in num pad support.  Added a command to the center key which
+  causes CTRL movement a la Nethack ('G' command).
 * Deleted nearly everything from random.c and replaced it with the stdlib
   rand() function - for portability.
 * Pasted rogue.instr into instruct.c - game instructions are no longer

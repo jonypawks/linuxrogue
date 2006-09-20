@@ -34,6 +34,7 @@
 #include "zap.h"
 
 boolean interrupted = 0;
+boolean multimove = 0;
 char *unknown_command = "Unknown command.";
 
 // extern short party_room, bear_trap;
@@ -184,6 +185,9 @@ void play_level(void)
 CH:
 		switch(ch)
 		{
+		case ROGUE_KEY_MULTIMOVE:
+			multimove = ((multimove == 0) ? 1 : 0);
+			break;
 		case ROGUE_KEY_INSTRUCTIONS:
 			Instructions();
 			break;
@@ -210,7 +214,7 @@ CH:
 		case ROGUE_KEY_NORTHWEST:
 		case ROGUE_KEY_SOUTHEAST:
 		case ROGUE_KEY_SOUTHWEST:
-			(void) one_move_rogue(ch, 1);
+			(void) move_rogue(ch, 1);
 			break;
 		case ROGUE_KEY_NORTH_SHIFT:
 		case ROGUE_KEY_SOUTH_SHIFT:

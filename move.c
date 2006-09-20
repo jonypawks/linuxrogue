@@ -39,7 +39,7 @@ extern int bear_trap;
 extern short halluc, haste_self, confused;
 extern short e_rings, regeneration, auto_search;
 extern char hunger_str[];
-extern boolean being_held, interrupted, r_teleport;
+extern boolean being_held, interrupted, r_teleport, multimove;
 extern fighter rogue;
 extern unsigned short dungeon[DROWS][DCOLS];
 extern object level_monsters;
@@ -48,6 +48,18 @@ extern object level_objects;
 short gr_dir(void);
 int next_to_something(int, int);
 void heal(void);
+
+int move_rogue(short dirch, short pickup)
+{
+	if (multimove)
+	{
+		multiple_move_rogue(dirch-('a'-1));
+		multimove = 0;
+		return 0;
+	} else {
+		return one_move_rogue(dirch, pickup);
+	}
+}
 
 int one_move_rogue(short dirch, short pickup)
 {

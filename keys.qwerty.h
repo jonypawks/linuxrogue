@@ -61,6 +61,7 @@
 #define ROGUE_KEY_ZAPP            'z'
 #define ROGUE_KEY_THROW           't'
 #define ROGUE_KEY_PICK_UP         ','
+#define ROGUE_KEY_MULTIMOVE       'G'
 
 #define ROGUE_KEY_REMESSAGE       '\020'
 #define ROGUE_KEY_VERSION         'v'
