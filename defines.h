@@ -30,7 +30,7 @@
    * SHIFT+key movement doesn't work for number pad
    * CTRL+key movement only works for left, right, up and down. */
 
-#define NUMPAD
+//#define NUMPAD
 
 /* These options change how the high score table is written:
   MAX_SCORES sets the maximum size of the table.

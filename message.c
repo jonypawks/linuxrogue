@@ -166,7 +166,7 @@ int rgetchar(void)
 
 	for(;;)
 	{
-		ch = getchar();
+		ch = getch();
 
 		switch(ch)
 		{
@@ -176,37 +176,26 @@ int rgetchar(void)
 		case ROGUE_KEY_SAVE_SCREEN:
 			save_screen();
 			break;
-	#ifdef NUMPAD
-		case 27:
-			//TODO:  Fix escape key to not have to be hit twice!
-			ch=getchar();
-			if (ch==91)
-			{
-				ch=getchar();
-				if (ch=='A') return ROGUE_KEY_NORTH;
-				else if (ch=='B') return ROGUE_KEY_SOUTH;
-				else if (ch=='C') return ROGUE_KEY_EAST;
-				else if (ch=='D') return ROGUE_KEY_WEST;
-				else if (ch=='G') return ROGUE_KEY_SEARCH;
-				else if (ch=='1') { ch=getchar(); return ROGUE_KEY_NORTHWEST; }
-				else if (ch=='5') { ch=getchar(); return ROGUE_KEY_NORTHEAST; }
-				else if (ch=='4') { ch=getchar(); return ROGUE_KEY_SOUTHWEST; }
-				else if (ch=='6') { ch=getchar(); return ROGUE_KEY_SOUTHEAST; }
-				else if (ch=='3') { ch=getchar(); return ROGUE_KEY_REST; }
-				else if (ch=='2') { ch=getchar(); return ROGUE_KEY_INVENTORY; }
-				else return ch;
-			} else if (ch=='O') {
-				ch=getchar();
-				if (ch=='A') return ROGUE_KEY_NORTH_CTRL;
-				else if (ch=='B') return ROGUE_KEY_SOUTH_CTRL;
-				else if (ch=='C') return ROGUE_KEY_EAST_CTRL;
-				else if (ch=='D') return ROGUE_KEY_WEST_CTRL;
-				else if (ch=='G') return ROGUE_KEY_SEARCH;
-			} else {
-				return ch;
-			}
-			break;
-	#endif
+		case KEY_UP:
+			return ROGUE_KEY_NORTH;
+		case KEY_LEFT:
+			return ROGUE_KEY_WEST;
+		case KEY_DOWN:
+			return ROGUE_KEY_SOUTH;
+		case KEY_RIGHT:
+			return ROGUE_KEY_EAST;
+		case KEY_A1:
+		case KEY_HOME:
+			return ROGUE_KEY_NORTHWEST;
+		case KEY_A3:
+		case KEY_PPAGE:
+			return ROGUE_KEY_NORTHEAST;
+		case KEY_C1:
+		case KEY_END:
+			return ROGUE_KEY_SOUTHWEST;
+		case KEY_C3:
+		case KEY_NPAGE:
+			return ROGUE_KEY_SOUTHEAST;
 		default:
 			return(ch);
 		}

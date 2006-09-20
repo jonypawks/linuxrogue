@@ -21,7 +21,13 @@ rogue: $(OBJECTS)
 	$(CC) $(CFLAGS) -c $<
 
 clean:
-	rm -f $(OBJECTS) $(DFILES) rogue *.tar.gz
+	rm -f $(OBJECTS) $(DFILES) rogue *.tar.gz .roguescores
+
+install:
+	cp ./rogue /usr/games/rogue
+
+uninstall:
+	rm -f /usr/games/rogue
 
 release: clean
 	mkdir linuxrogue-$(VERSION)
