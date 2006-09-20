@@ -184,6 +184,10 @@ int rgetchar(void)
 			return ROGUE_KEY_SOUTH;
 		case KEY_RIGHT:
 			return ROGUE_KEY_EAST;
+		case KEY_SLEFT:
+			return ROGUE_KEY_WEST_SHIFT;
+		case KEY_SRIGHT:
+			return ROGUE_KEY_EAST_SHIFT;
 		case KEY_A1:
 		case KEY_HOME:
 			return ROGUE_KEY_NORTHWEST;
@@ -196,6 +200,14 @@ int rgetchar(void)
 		case KEY_C3:
 		case KEY_NPAGE:
 			return ROGUE_KEY_SOUTHEAST;
+		case KEY_B2:
+			return ROGUE_KEY_MULTIMOVE;
+		case KEY_DC:
+			return ROGUE_KEY_REST;
+		case KEY_IC:
+			return ROGUE_KEY_INVENTORY;
+		case KEY_BACKSPACE:
+			return '\b';
 		default:
 			return(ch);
 		}

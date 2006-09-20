@@ -7,6 +7,8 @@
 #ifndef _MOVE_H_
 #define _MOVE_H_
 
+int move_rogue(short dirch, short pickup);
+
 int one_move_rogue(short dirch, short pickup);
 
 void multiple_move_rogue(int dirch);
