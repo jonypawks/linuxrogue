@@ -1,14 +1,4 @@
-/*
- * rogue.h
- *
- * This source herein may be modified and/or distributed by anybody who
- * so desires, with the following restrictions:
- *    1.)  This notice shall not be removed.
- *    2.)  Credit shall not be taken for the creation of this source.
- *    3.)  This code is not to be traded, sold, or used for personal
- *         gain or profit.
- *
- */
+/* rogue.h */
 
 #ifndef _ROGUE_H_
 #define _ROGUE_H_
